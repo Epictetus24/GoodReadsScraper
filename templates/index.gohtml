@@ -1,0 +1,41 @@
+		<!doctype html>
+		<html lang="en">
+		<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalabe=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		
+	
+		<title>GoodReads Shelf</title>
+		</head>
+			<h1>Viewing GoodReads Profile</h1>
+
+			<h2>Currently Reading:</h2>
+			<table><tr>
+			<th>Cover</th>
+			<th>Details</th>
+			<th>Blurb</th>
+			</tr>
+			{{range .BookList}}
+			<tr>
+			<td><img src="{{.CoverURL}}"/></td>
+			<td>
+			<b>Name {{.Name}}</b>
+			Author {{.Author}}
+			<a href="{{.Bookurl}}">"Click for more details</a>
+			</td>
+			<td><span style="white-space: pre-wrap">{{.Blurb}}<span></td>
+			</tr>
+			{{end}}</table>
+	
+
+
+			<h3>Change User:</h3>
+
+			<form action="/" method="POST">
+			<label for="userid">set userid</label>
+			<input type="text" name="userid" id="userid" placeholder="UserID from goodreads profile URL e.g. https://www.goodreads.com/user/show/234523434-username/">
+
+	 		<input type="submit">
+	 		</form>
+
+			</html>
